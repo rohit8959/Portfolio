@@ -27,6 +27,7 @@ const FlipCard = () => {
           <p className="text-center text-lg font-semibold">
             Hi, I’m Rohit Rajput — Passionate Frontend Developer skilled in React, Tailwind, and Java!
           </p>
+          <p className="text-white text-center">🚀 FlipCard is working - Vercel Test</p>
         </div>
       </div>
     </Tilt>
