@@ -8,9 +8,13 @@ import emailjs from 'emailjs-com';
 import { useRef } from 'react';
 import Swal from 'sweetalert2';
 
+import Tilt from "react-parallax-tilt";
+import FlipCard from "./components/FlipCard";
+import HomeFlip from "./components/HomeFlip";
+
 function App() {
 
-  const [color,setColor]=useState('#22d3ee');
+  const [color, setColor] = useState('#22d3ee');
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const formx = useRef();
 
@@ -79,7 +83,7 @@ function App() {
     { name: "JavaScript", level: 80, icon: <FaJs className="text-yellow-400 mr-2" /> },
     { name: "React", level: 75, icon: <FaReact className="text-cyan-400 mr-2" /> },
     { name: "TailwindCSS", level: 80, icon: <SiTailwindcss className="text-teal-400 mr-2" /> },
-   
+
     { name: "Java", level: 75, icon: <FaJava className="text-red-500 mr-2" /> },
     { name: "DSA", level: 70, icon: <span className="text-green-400 font-bold mr-2">📊</span> },
   ];
@@ -115,9 +119,9 @@ function App() {
   return (
     <>
 
-   
 
- 
+
+
 
 
       <div className="font-sans bg-[#0f172a] text-white scroll-smooth">
@@ -132,30 +136,32 @@ function App() {
               <li><a href="#skills" className="hover:text-cyan-400  hover:text-shadow-[10px_10px_30px_#22d3ee] ">Skills</a></li>
               <li><a href="#project" className="hover:text-cyan-400  hover:text-shadow-[10px_10px_30px_#22d3ee] ">Project</a></li>
               <li><a href="#contact" className="hover:text-cyan-400  hover:text-shadow-[10px_10px_30px_#22d3ee] " >Contact</a></li>
-              
-            
+
+
             </ul>
           </nav>
         </header>
 
         {/* Home Section */}
-        <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6 py-20 bg-gradient-to-b from-[#0f172a] to-[#111827]">
-          <div className="md:w-1/2 text-center md:text-left ">
+        <section id="home" className=" min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6 py-20 bg-gradient-to-b from-[#0f172a] to-[#111827]">
+
+          
+          <div className="  md:w-1/2 text-center md:text-left ">
             <h2 className="text-5xl md:text-6xl font-extrabold leading-tight text-white">Hello, It's Me</h2>
             <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 mt-2 animate-pulse">Rohit Rajput</h1>
             <h3 className="text-2xl mt-4 text-cyan-400 font-medium">
               <Typewriter
                 options={{
-                  strings: [" Frontend Developer", "Java Programmer","Web Enthusiast"],
+                  strings: [" Frontend Developer", "Java Programmer", "Web Enthusiast"],
                   autoStart: true,
                   loop: true,
-                  timer:10,
+                  timer: 10,
                 }}
               />
             </h3>
             <p className="text-gray-300 mt-6">
               Turning ideas into beautiful and functional websites using modern web tech.
-Passionate about clean code, creative design, and Java logic and many more...
+              Passionate about clean code, creative design, and Java logic and many more...
             </p>
             <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
               <a href="https://github.com/rohit8959" className="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center hover:shadow-[0_0_10px_#22d3ee] transition duration-200"><FaGithub /></a>
@@ -168,7 +174,11 @@ Passionate about clean code, creative design, and Java logic and many more...
             </div>
           </div>
 
-          <div className="md:w-1/2 flex justify-center ">
+
+          <div className=" rounded-full  min-h-content bg-gray-900 flex justify-center items-center">
+            <HomeFlip />
+          </div>
+          {/* <div className="md:w-1/2 flex justify-center ">
             <div className="relative w-80 h-100 rounded-full  border-2 border-gradient-to-tr from-pink-400 via-purple-500 to-cyan-400  shadow-[0_0_10px_#28d3ee] overflow-hidden shadow-9xl ">
               <img
                 src="./images/rohit photo.jpg"
@@ -177,12 +187,25 @@ Passionate about clean code, creative design, and Java logic and many more...
               />
               <div className="absolute inset-0 rounded-full border-4 border-pink-500 animate-pulse"></div>
             </div>
-          </div>
+          </div> */}
+
+
         </section>
+
+
+
+
+
 
         {/* About Section */}
         <section id="about" className="py-20 px-6 bg-[#0f172a] text-white">
           <div className="container mx-auto flex flex-col md:flex-row items-center gap-10">
+
+
+            <div className=" md:ml-20 min-h-content  bg-gray-900 text-white flex justify-center items-center ">
+              <FlipCard />
+            </div>
+            {/* 
             <div className="md:w-1/2 flex justify-center">
               <div className="relative w-60 h-80 rounded-full border-2 border-gradient-to-tr from-pink-400 via-purple-500 to-cyan-400  shadow-[0_0_10px_#28d3ee] overflow-hidden shadow-9xl ">
                 <img
@@ -192,16 +215,18 @@ Passionate about clean code, creative design, and Java logic and many more...
                 />
                 <div className="absolute inset-0 rounded-full border-4 border-pink-500 animate-pulse"></div>
               </div>
-            </div>
-            <div className="md:w-1/2">
+            </div> */}
+
+
+            <div className=" md:ml-20 md:w-1/2">
               <h2 className="text-3xl font-bold mb-2">
                 About <span className="text-cyan-400">Me</span>
               </h2>
               <h3 className="text-xl mb-4">Full Stack Developer!</h3>
               <p className="text-gray-300 mb-6">
-               A frontend web developer skilled in building clean, responsive, and interactive user interfaces using HTML, CSS, JavaScript, React, and TailwindCSS. Also well-versed in core Java programming concepts like object-oriented programming, arrays, and data structures.
+                A frontend web developer skilled in building clean, responsive, and interactive user interfaces using HTML, CSS, JavaScript, React, and TailwindCSS. Also well-versed in core Java programming concepts like object-oriented programming, arrays, and data structures.
 
-Passionate about problem-solving and continuously exploring new technologies to create better digital experiences. Every project is an opportunity to learn, improve, and build something meaningful.
+                Passionate about problem-solving and continuously exploring new technologies to create better digital experiences. Every project is an opportunity to learn, improve, and build something meaningful.
               </p>
               <a href="#" className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-blue-600 hover:to-cyan-600 text-white 
               rounded-full font-semibold transition duration-200 shadow-md hover:shadow-[0_0_10px_#22d3ee]">More About Me</a>
